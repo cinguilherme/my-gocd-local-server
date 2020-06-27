@@ -1,0 +1,42 @@
+version: "3.7"
+
+services:
+  go-server:
+    image: gocd/gocd-server:v20.5.0
+    container_name: go-server
+    ports:
+      - "8153:8153"
+      - "8154:8154"
+    # volumes:
+    #   - ./godata/config/cruise-config.xml:/godata/config/cruise-config.xml
+  
+#   go-agent1:
+#     image: gocd/gocd-agent-ubuntu-16.04:v20.5.0
+#     links:
+#       - "go-server"
+#     depends_on:
+#       - "go-server"
+#     environment:
+#     #   AGENT_AUTO_REGISTER_KEY: '123456789abcdefgh987654321'
+#       GO_SERVER_URL: http://go-server:8154/go
+
+#   go-agent3:
+#     image: gocd/gocd-agent-alpine-3.11:v20.5.0
+#     links:
+#         - "go-server"
+#     depends_on:
+#         - "go-server"
+#     environment:
+#         # AGENT_AUTO_REGISTER_KEY: '123456789abcdefgh987654321'
+#         GO_SERVER_URL: http://go-server:8154/go
+
+#   go-agent4:
+#     image: gocd/gocd-agent-centos-8:v20.5.0
+#     links:
+#         - "go-server"
+#     depends_on:
+#         - "go-server"
+#     environment:
+#         # AGENT_AUTO_REGISTER_KEY: '123456789abcdefgh987654321'
+#         GO_SERVER_URL: http://go-server:8154/go
+
